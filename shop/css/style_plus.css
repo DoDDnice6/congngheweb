@@ -1,0 +1,13 @@
+.content_container{
+	margin-bottom: 15px;
+	padding-left: 10px;
+	text-align: justify;
+}
+.content_container .title{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.content_container p{
+	font-size: 13px;
+	padding-left: 20px;
+}
