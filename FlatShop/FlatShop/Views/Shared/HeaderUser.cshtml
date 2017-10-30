@@ -1,0 +1,12 @@
+﻿@model FlatShop.Models.EF.MoreEF.Account
+
+@if (Model==null)
+{
+            <li><a href="/Login/Index" class="log">Đăng nhập</a></li>
+            <li><a href="/Registry/Index" class="reg">Đăng kí</a></li>
+}
+else
+{
+    <li><span style="color:white;">@Model.Email</span></li>
+}
+

@@ -1,0 +1,883 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using FlatShop.Models.EF
+@model Product
+@section css{
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Assets/Client/images/favicon.png">
+    <title>Welcome to FlatShop</title>
+    <link href="~/Assets/Client/css/bootstrap.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
+    <link href="~/Assets/Client/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Assets/Client/css/flexslider.css" type="text/css" media="screen" />
+    <link href="~/Assets/Client/css/sequence-looptheme.css" rel="stylesheet" media="all" />
+    <link href="~/Assets/Client/css/style.css" rel="stylesheet">
+}
+
+@section script{
+    <script type="text/javascript" src="~/Assets/Client/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/jquery.sequence-min.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    <script defer src="~/Assets/Client/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="~/Assets/Client/js/script.min.js"></script>
+}
+
+
+
+<div class="container_fullwidth">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="products-details">
+                    <div class="preview_image">
+                        <div class="preview-small">
+                            <img id="zoom_03" src="/Assets/Client/images/products/medium/products-01.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-01.jpg" alt="">
+                        </div>
+                        <div class="thum-image">
+                            <ul id="gallery_01" class="prev-thum">
+                                <li>
+                                    <a href="#" data-image="/Assets/Client/images/products/medium/products-01.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-01.jpg">
+                                        <img src="/Assets/Client/images/products/thum/products-01.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-image="/Assets/Client/images/products/medium/products-02.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-02.jpg">
+                                        <img src="/Assets/Client/images/products/thum/products-02.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-image="/Assets/Client/images/products/medium/products-03.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-03.jpg">
+                                        <img src="/Assets/Client/images/products/thum/products-03.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-image="/Assets/Client/images/products/medium/products-04.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-04.jpg">
+                                        <img src="/Assets/Client/images/products/thum/products-04.png" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" data-image="/Assets/Client/images/products/medium/products-05.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-05.jpg">
+                                        <img src="/Assets/Client/images/products/thum/products-05.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <a class="control-left" id="thum-prev" href="javascript:void(0);">
+                                <i class="fa fa-chevron-left">
+                                </i>
+                            </a>
+                            <a class="control-right" id="thum-next" href="javascript:void(0);">
+                                <i class="fa fa-chevron-right">
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="products-description">
+                        <h5 class="name">
+                            Lincoln Corner Unit Products
+                        </h5>
+                        <p>
+                            <img alt="" src="/Assets/Client/images/star.png">
+                            <a class="review_num" href="#">
+                                02 Review(s)
+                            </a>
+                        </p>
+                        <p>
+                            Availability:
+                            <span class=" light-red">
+                                In Stock
+                            </span>
+                        </p>
+                        <p>
+                            Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+                        </p>
+                        <hr class="border">
+                        <div class="price">
+                            Gía :
+                            <span class="new_price">
+                                450.00
+                                <sup>
+                                    $
+                                </sup>
+                            </span>
+                            <span class="old_price">
+                                450.00
+                                <sup>
+                                    $
+                                </sup>
+                            </span>
+                        </div>
+                        <hr class="border">
+                        <div class="wided">
+                            <div class="qty">
+                                Số lượng:
+                                <select>
+                                    <option>
+                                        1
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="button_group">
+                                <button class="button">
+                                    THÊM VÀO GIỎ
+                                </button>
+                                <button class="button compare">
+                                    <i class="fa fa-exchange">
+                                    </i>
+                                </button>
+                                <button class="button favorite">
+                                    <i class="fa fa-heart-o">
+                                    </i>
+                                </button>
+                                <button class="button favorite">
+                                    <i class="fa fa-envelope-o">
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <hr class="border">
+                        <img src="/Assets/Client/images/share.png" alt="" class="pull-right">
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div>
+                    <h3 class="title"><strong>Thông tin chi tiết</strong></h3>
+                    <div class="product_detail">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>@Model.ID</td>
+                                </tr>
+                                <tr>
+                                    <td>Tên</td>
+                                    <td>@Model.Name</td>
+                                </tr>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>@Model.Code</td>
+                                </tr>
+                                <tr>
+                                    <td>Hình ảnh</td>
+                                    <td><img src="/Assets/Admin/images/@Model.Image" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+
+                <div class="clearfix">
+                </div>
+                <div id="productsDetails" class="hot-products">
+                    <h3 class="title">
+                        <strong>
+                            Sản phẩm
+                        </strong>
+                        Nổi bật
+                    </h3>
+                    <div class="control">
+                        <a id="prev_hot" class="prev" href="#">
+                            &lt;
+                        </a>
+                        <a id="next_hot" class="next" href="#">
+                            &gt;
+                        </a>
+                    </div>
+                    <ul id="hot">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            - %20
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-01.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-02.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            New
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-03.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            - %20
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-01.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-02.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            New
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-03.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            - %20
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-01.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-02.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="products">
+                                        <div class="offer">
+                                            New
+                                        </div>
+                                        <div class="thumbnail">
+                                            <img src="/Assets/Client/images/products/small/products-03.png" alt="Product Name">
+                                        </div>
+                                        <div class="productname">
+                                            Iphone 5s Gold 32 Gb 2013
+                                        </div>
+                                        <h4 class="price">
+                                            $451.00
+                                        </h4>
+                                        <div class="button_group">
+                                            <button class="button add-cart" type="button">
+                                                Add To Cart
+                                            </button>
+                                            <button class="button compare" type="button">
+                                                <i class="fa fa-exchange">
+                                                </i>
+                                            </button>
+                                            <button class="button wishlist" type="button">
+                                                <i class="fa fa-heart-o">
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div>
+                    <h3 class="title"><strong>Bình luận</strong></h3>
+                    <div class="product_detail">
+                        <div class="row">
+                            <div>
+                                <section class="comment-list">
+                                    <!-- First Comment -->
+                                    <article class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="panel panel-default arrow left">
+                                                <div class="panel-body">
+                                                    <header class="text-left"></header>
+                                                    <div class="comment-post">
+                                                        <p>
+                                                            Sản phẩm này vẫn còn giá sale 50% là 90.000Đ không ạ ?
+                                                        </p>
+                                                    </div>
+                                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> Trả lời</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <!-- Second Comment Reply -->
+                                    <article class="row">
+                                        <div class="col-md-12 col-sm-12" style="padding-left: 100px;">
+                                            <div class="panel panel-default arrow left">
+                                                <div class="panel-heading right">Trả lời</div>
+                                                <div class="panel-body">
+                                                    <header class="text-left"></header>
+                                                    <div class="comment-post">
+                                                        <p>
+                                                            Chào bạn, giá sản phẩm sẽ thay đổi theo từng thời điểm và số lượng giá khuyến mãi có giới hạn. Trường hợp khi khách hàng đã đặt mua hết số lượng giá ưu đãi thì giá sản phẩm sẽ thay đổi hoặc sản phẩm sẽ hết hàng nhé. Bạn có thể cân nhắc đặt hàng ngay khi sản phẩm có giá phù hợp để được giá tốt nhất nha!
+                                                        </p>
+                                                    </div>
+                                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> Trả lời</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <form>
+                                        <input class="textbox_comment" type="text" name="" placeholder="Nhập bình luận của bạn">
+                                        <button class="button btn_comment">Gửi</button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div>
+                    <h3 class="title"><strong>Đánh giá</strong></h3>
+                    <div class="product_detail">
+                        <div class="row review_sumary">
+                            <div class="col-md-4">
+                                <div class="title">
+                                    Đánh giá trung bình
+                                </div>
+                                <div class="review_point_total">4.5/5</div>
+                                <div class="rating_box">
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                    <i class="glyphicon glyphicon-star"></i>
+                                </div>
+                                <div class="rating_count"><span class="glyphicon glyphicon-user"></span>Tất cả 10 đánh giá</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="rating_num">5</span>
+                                    </div>
+                                    <div class="col-md-9 progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 75%;">
+                                            75%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="rating_num">4</span>
+                                    </div>
+                                    <div class="col-md-9 progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 25%;">
+                                            25%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="rating_num">3</span>
+                                    </div>
+                                    <div class="col-md-9 progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 0%;">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="rating_num">2</span>
+                                    </div>
+                                    <div class="col-md-9 progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 0%;">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <span class="glyphicon glyphicon-star"></span>
+                                        <span class="rating_num">1</span>
+                                    </div>
+                                    <div class="col-md-9 progress">
+                                        <div class="progress-bar progress-bar-success" style="width: 0%;">
+                                            0%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="title">Viết đánh giá của bạn</div>
+                                <div class="btn btn-default">Đánh giá</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="special-deal leftbar">
+                    <h4 class="title">
+                        Ưu đãi
+                        <strong>
+                            Đặc biệt
+                        </strong>
+                    </h4>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="#">
+                                <img src="/Assets/Client/images/products/thum/products-01.png" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                Licoln Corner Unit
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="#">
+                                <img src="/Assets/Client/images/products/thum/products-02.png" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                Licoln Corner Unit
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="special-item">
+                        <div class="product-image">
+                            <a href="#">
+                                <img src="/Assets/Client/images/products/thum/products-03.png" alt="">
+                            </a>
+                        </div>
+                        <div class="product-info">
+                            <p>
+                                Licoln Corner Unit
+                            </p>
+                            <h5 class="price">
+                                $300.00
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="product-tag leftbar">
+                    <h3 class="title">
+                        Thẻ
+                        <strong>
+                            Sản phẩm
+                        </strong>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Lincoln us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                SDress for Girl
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Corner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Window
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                PG
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Oscar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Bath room
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                PSD
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="get-newsletter leftbar">
+                    <h3 class="title">
+                        Nhận
+                        <strong>
+                            bản tin
+                        </strong>
+                    </h3>
+                    <p>
+                        Casio G Shock Digital Dial Black.
+                    </p>
+                    <form>
+                        <input class="email" type="text" name="" placeholder="Email của bạn...">
+                        <input class="submit" type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="fbl-box leftbar">
+                    <h3 class="title">
+                        Facebook
+                    </h3>
+                    <span class="likebutton">
+                        <a href="#">
+                            <img src="/Assets/Client/images/fblike.png" alt="">
+                        </a>
+                    </span>
+                    <p>
+                        12k people like Flat Shop.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="fbplug">
+                        <a href="#">
+                            <span>
+                                <img src="/Assets/Client/images/fbicon.png" alt="">
+                            </span>
+                            Facebook social plugin
+                        </a>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <div class="our-brand">
+            <h3 class="title">
+                <strong>
+                    Nhãn hiệu
+                </strong>
+            </h3>
+            <div class="control">
+                <a id="prev_brand" class="prev" href="#">
+                    &lt;
+                </a>
+                <a id="next_brand" class="next" href="#">
+                    &gt;
+                </a>
+            </div>
+            <ul id="braldLogo">
+                <li>
+                    <ul class="brand_item">
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/envato.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/themeforest.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/photodune.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/activeden.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/envato.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="brand_item">
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/envato.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/themeforest.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/photodune.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/activeden.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="brand-logo">
+                                    <img src="/Assets/Client/images/envato.png" alt="">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
