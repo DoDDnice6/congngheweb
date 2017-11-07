@@ -170,6 +170,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Common\Session.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -180,13 +187,11 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EF\About.cs" />
-    <Compile Include="Models\EF\Admin.cs" />
     <Compile Include="Models\EF\Brand.cs" />
     <Compile Include="Models\EF\Comment.cs" />
     <Compile Include="Models\EF\Contact.cs" />
     <Compile Include="Models\EF\ContentTag.cs" />
     <Compile Include="Models\EF\Country.cs" />
-    <Compile Include="Models\EF\Customer.cs" />
     <Compile Include="Models\EF\DiscountCode.cs" />
     <Compile Include="Models\EF\DiscountProduct.cs" />
     <Compile Include="Models\EF\Feedback.cs" />
@@ -206,8 +211,12 @@
     <Compile Include="Models\EF\Slide.cs" />
     <Compile Include="Models\EF\sysdiagram.cs" />
     <Compile Include="Models\EF\Tag.cs" />
+    <Compile Include="Models\EF\User.cs" />
     <Compile Include="Models\EF\UserInRole.cs" />
-    <Compile Include="Models\Function\CustomerF.cs" />
+    <Compile Include="Models\Function\BrandF.cs" />
+    <Compile Include="Models\Function\CountryF.cs" />
+    <Compile Include="Models\Function\MenuF.cs" />
+    <Compile Include="Models\Function\UserF.cs" />
     <Compile Include="Models\Function\OrderDetailF.cs" />
     <Compile Include="Models\Function\OrderF.cs" />
     <Compile Include="Models\Function\ProductCategoryF.cs" />
@@ -218,8 +227,13 @@
     <Compile Include="Models\Security\CustomPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="UserWebService.asmx.cs">
+      <DependentUpon>UserWebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Admin\js\test.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -229,6 +243,32 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Insert.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Insert.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Update.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -243,6 +283,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UserWebService.asmx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -283,12 +324,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Assets\Admin\data\" />
     <Folder Include="Assets\Admin\dist\" />
-    <Folder Include="Assets\Admin\js\" />
+    <Folder Include="Assets\Admin\images\" />
     <Folder Include="Assets\Admin\less\" />
     <Folder Include="Assets\Admin\vendor\" />
     <Folder Include="Assets\Client\css\" />

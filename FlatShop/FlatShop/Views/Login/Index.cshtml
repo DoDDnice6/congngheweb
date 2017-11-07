@@ -246,7 +246,9 @@
                                                 Đăng nhập
                                             </h5>
                                             <form method="post" action="/Login/Index">
-
+                                                
+                                                    @Html.ValidationSummary(true, "", new {@class="text-danger"})
+                                            
                                                 <input type="hidden" name="ReturnUrl" value="@ViewBag.ReturnURL"/>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">

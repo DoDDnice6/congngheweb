@@ -44,7 +44,10 @@ namespace FlatShop.Models.Function
             if (dbEntry == null) return false;
             dbEntry.ID = model.ID;
             dbEntry.Name = model.Name;
-
+            dbEntry.MetaTitle = model.MetaTitle;
+            dbEntry.DisplayOrder = model.DisplayOrder;
+            dbEntry.Status = model.Status;
+            dbEntry.ParentID = model.ParentID;
             // context.Entry(dbEntry).State = System.Data.Entity.EntityState.Modified;
 
             context.SaveChanges();

@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using testWebService.ServiceReference1
+@model User[]
+
+
+@foreach(var item in Model)
+{
+    <div>@item.Name</div>
+}
+
+
+ 

@@ -21,7 +21,7 @@ namespace FlatShop.Controllers
                 url = System.Web.HttpContext.Current.Request.UrlReferrer.ToString();
             }
             catch { }
-            ViewBag.ReturnURL = url;//ReturnUrl;
+            ViewBag.ReturnURL = url;
             //ViewBag.ReturnURL = ReturnUrl;
             return View();
         }
@@ -35,8 +35,7 @@ namespace FlatShop.Controllers
                 return View("Index", model);
             }
 
-            var acc = new CustomerF().Login(model.Email, model.Password);
-
+            var acc = new UserF().Login(model.Email, model.Password);
 
             if (acc == null)
             {

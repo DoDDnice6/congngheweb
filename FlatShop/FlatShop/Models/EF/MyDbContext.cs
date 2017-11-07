@@ -13,13 +13,11 @@ namespace FlatShop.Models.EF
         }
 
         public virtual DbSet<About> Abouts { get; set; }
-        public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Brand> Brands { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContentTag> ContentTags { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<DiscountCode> DiscountCodes { get; set; }
         public virtual DbSet<DiscountProduct> DiscountProducts { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
@@ -35,6 +33,7 @@ namespace FlatShop.Models.EF
         public virtual DbSet<Slide> Slides { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserInRole> UserInRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

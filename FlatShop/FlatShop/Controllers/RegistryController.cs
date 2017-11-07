@@ -23,14 +23,14 @@ namespace FlatShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new CustomerF();
+                var dao = new UserF();
                 if (dao.CheckEmail(model.Email))
                 {
                     ModelState.AddModelError("", "Email đã tồn tại");
                 }
                 else
                 {
-                    var cus = new Customer();
+                    var cus = new User();
                     cus.Name = model.Name;
                     cus.Email = model.Email;
                     cus.Phone = model.Password;

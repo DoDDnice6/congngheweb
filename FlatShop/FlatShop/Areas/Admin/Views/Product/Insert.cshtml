@@ -1,0 +1,172 @@
+﻿
+
+@{
+    ViewBag.Title = "Insert";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section script{
+    
+    <script src="/Assets/Admin/js/test.js"></script>
+    }
+@model FlatShop.Models.EF.Product
+<form action="/Product/Insert" method="post">
+    <div class="form-horizontal">
+        <h4>Sản phẩm</h4>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="CaterogyID">Danh mục sản phẩm</label>
+            <div class="col-md-6">
+                @*<input class="form-control text-box single-line" data-val="true" data-val-number="The field CaterogyID must be a number." id="CaterogyID" name="CaterogyID" type="number" value="">*@
+                @Html.DropDownListFor(model => model.CaterogyID, null, new { @class = "form-control" })
+                <span class="field-validation-valid text-danger" data-valmsg-for="CaterogyID" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Name">Tên sản phẩm</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line"  onchange="MetaTitle_()" data-val="true" data-val-length="The field Name must be a string with a maximum length of 250." data-val-length-max="250" data-val-required="khong de trong" id="Name" name="Name" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Code">Mã sản phẩm</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Code must be a string with a maximum length of 50." data-val-length-max="50" id="Code" name="Code" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Code" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MetaTitle">MetaTitle</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-length="The field MetaTitle must be a string with a maximum length of 250." data-val-length-max="250" id="MetaTitle" name="MetaTitle" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="MetaTitle" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Description">Mô tả</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Description must be a string with a maximum length of 500." data-val-length-max="500" id="Description" name="Description" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Image">Hình ảnh</label>
+            <div class="col-md-6">
+                <img src="" style="width:100px;height:100px;" id="img" />
+                <label class="btn btn-default btn-file" style="margin-left:20px;">
+                    Chọn ảnh <input type="file" style="display: none;" name="Image" id="btnChonAnh" onchange="ChangeImage()">
+                </label>
+               @* <input class="form-control text-box single-line" data-val="true" data-val-length="The field Image must be a string with a maximum length of 250." data-val-length-max="250" id="Image" name="Image" type="file" value="">*@
+                <span class="field-validation-valid text-danger" data-valmsg-for="Image" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MoreImages">Hình ảnh khác</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" id="MoreImages" name="MoreImages" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="MoreImages" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Price">Giá</label>
+            <div class="col-md-2">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="The field Price must be a number." id="Price" name="Price" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Price" data-valmsg-replace="true"></span>
+            </div>
+            <label class="control-label col-md-2" for="PromotionPrice">Giá khuyến mãi</label>
+            <div class="col-md-2">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="The field PromotionPrice must be a number." id="PromotionPrice" name="PromotionPrice" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="PromotionPrice" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IncludeVAT">Bao gồm VAT</label>
+            <div class="col-md-6">
+                <div class="checkbox">
+                    <select class=" form-control list-box tri-state" id="IncludeVAT" name="IncludeVAT">
+                        <option selected="selected" value="">Not Set</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="IncludeVAT" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="CountryID">Xuất xứ</label>
+            <div class="col-md-6">
+                @*<input class="form-control text-box single-line" data-val="true" data-val-number="The field CountryID must be a number." id="CountryID" name="CountryID" type="number" value="">*@
+                @Html.DropDownListFor(Model => Model.CountryID,null, new { @class="form-control"})
+                
+                <span class="field-validation-valid text-danger" data-valmsg-for="CountryID" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Material">Chất liệu</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Material must be a string with a maximum length of 50." data-val-length-max="50" id="Material" name="Material" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Material" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Quantity">Số lượng</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="The field Quantity must be a number." data-val-required="The Quantity field is required." id="Quantity" name="Quantity" type="number" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="BrandID">Nhãn hiệu</label>
+            <div class="col-md-6">
+                @*<input class="form-control text-box single-line" data-val="true" data-val-number="The field BrandID must be a number." id="BrandID" name="BrandID" type="number" value="">*@
+                @Html.DropDownListFor(model => model.BrandID, null, new { @class = "form-control" })
+                <span class="field-validation-valid text-danger" data-valmsg-for="BrandID" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Detail">Mô tả chi tiết</label>
+            <div class="col-md-6">
+                <textarea class="form-control text-box " id="Detail" name="Detail" type="text" value="" rows="10"></textarea>
+                <span class="field-validation-valid text-danger" data-valmsg-for="Detail" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Status">Trạng thái</label>
+            <div class="col-md-6">
+                <div class="checkbox">
+                    <select class="form-control   list-box tri-state" id="Status" name="Status">
+                        <option selected="selected" value="">Not Set</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Status" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Color">Màu săc</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-length="The field Color must be a string with a maximum length of 50." data-val-length-max="50" id="Color" name="Color" type="text" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Color" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Size">Cỡ</label>
+            <div class="col-md-6">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="The field Size must be a number." id="Size" name="Size" type="number" value="">
+                <span class="field-validation-valid text-danger" data-valmsg-for="Size" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Insert" class="btn btn-default">
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/Admin/Product/Index" class="btn btn-primary">Trở về</a>
+</div>
+
+
