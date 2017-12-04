@@ -1,0 +1,18 @@
+﻿@model List<FlatShop.Models.EF.Menu>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        @if(ViewBag.parentID==null){
+            <li class="active"><a href="/Home/Index">Trang Chủ</a></li>
+        }else{
+            <li><a href="/Home/Index">Trang Chủ</a></li>
+        }
+        @foreach (var item in Model)
+        {
+            if (ViewBag.parentID == item.ID)
+            { <li class="active"><a href="/ProductCategory/Index?ParentID=@item.ID">@item.Text</a></li>}
+            else
+            { <li><a href = "/ProductCategory/Index?ParentID=@item.ID" > @item.Text </a></li>}
+        }
+    </ul>
+</div>

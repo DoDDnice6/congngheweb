@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <link href="~/Assets/Admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="~/Assets/Admin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Assets/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Assets/Admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+}
+@section script{
+    <!-- jQuery -->
+    <script src="~/Assets/Admin/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Assets/Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/Assets/Admin/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="~/Assets/Admin/dist/js/sb-admin-2.js"></script>
+
+    <!-- jQuery -->
+    <script src="/Assets/Admin/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Assets/Admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Assets/Admin/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="/Assets/Admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/Assets/Admin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="/Assets/Admin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/Assets/Admin/dist/js/sb-admin-2.js"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+            $(document).ready(function() {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            })
+    </script>;
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @*<script type="text/javascript">
+            $(window).bind("load",function () {
+                var row = "<button class='btn btn-primary'>Thêm mới</button>";
+                $('#dataTables-example_filter > label').css({ "float": "left", "margin-right": "20px" })
+                $('#dataTables-example_filter').append(row);
+            })
+    </script>*@
+}
+
+@using FlatShop.Models.EF
+@model List<ProductCategory>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                DataTables Advanced Tables
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+
+                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <div class="form-group">
+                        <a href="/Admin/ProductCategory/Insert" class="btn btn-primary">Thêm mới</a>
+                    </div>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên danh mục</th>
+                            <th>Tác vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ID</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    @Html.ActionLink("Chi tiết", "Detail", new { ID = item.ID }) |
+                                    @Html.ActionLink("Sửa", "Update", new { ID = item.ID }) |
+                                    @Ajax.ActionLink("Xóa", "Delete", "Product", new { @id = item.ID }, new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xóa không?",
+                                       OnComplete = "$('#row_" + item.ID + "').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->

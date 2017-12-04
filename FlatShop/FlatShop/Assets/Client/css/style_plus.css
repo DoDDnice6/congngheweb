@@ -1,0 +1,138 @@
+
+#home_style{
+
+    background: url(../images/bg.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-attachment: fixed;
+}
+.content_container{
+	margin-bottom: 15px;
+	padding-left: 10px;
+	text-align: justify;
+}
+.content_container .title{
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+.content_container p{
+	font-size: 13px;
+	padding-left: 20px;
+}
+.product_detail{
+	border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    display: block;
+    margin: 15px 0 15px 0px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.product_description{
+	border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    display: block;
+    margin: 15px 0 15px 0px;
+    padding: 20px;
+    position: relative;
+    overflow: auto;
+    text-align: justify;
+    font-size: 18px;
+    height: 300px;
+}
+.textbox_comment{
+	border: 1px solid #E1E1E1;
+	border-radius: 10px;
+	padding: 10px 0;
+	width: 90%;
+}
+.btn_comment{
+	margin-left: 10px;
+	width: 70px;
+}
+.thumbnail {
+    padding:0px;
+}
+.panel {
+	position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:11px;left:-16px;
+	right:100%;
+	width:0;
+	height:0;
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:7px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+	border-right-color:#ddd;
+	border-width:8px;
+}
+
+
+.comment_content{
+	border: 1px solid #E1E1E1;
+    border-radius: 10px;
+    display: block;
+    margin: 15px 0 15px 0px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.review_sumary{
+	text-align: center;
+}
+.review_sumary .title{
+	font-size: 20px;
+	font-weight: 300;
+}
+.review_point_total{
+    font-size: 40px;
+    color: rgb(254, 48, 46);
+    font-weight: 500;
+    margin: 10px 0px 10px;
+}
+.rating_box{
+	margin-bottom: 10px;
+}
+.rating_box .glyphicon-star{
+	font-size: 22px;
+	color: rgb(255, 193, 32);
+}
+.rating_count{
+	font-size: 15px;
+}
+.rating_count span{
+	margin-right: 5px;
+}
+.rating_num{
+	display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 15px;
+    vertical-align: middle;
+    position: relative;
+}
+.progress{
+    box-shadow: none;
+    background: rgb(239, 239, 239);
+    height: 15px;
+    line-height: 15px;
+    padding: 0px;
+}
+.progress-bar-success{
+	box-shadow: none;
+    background: rgb(35, 180, 69);
+    font-size: 12px;
+    line-height: 13px;
+}

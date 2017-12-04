@@ -1,0 +1,84 @@
+﻿@using FlatShop.Models.EF
+@model List<FlatShop.Models.EF.Product>
+
+
+<div class="hot-products">
+    @{
+        Menu menu = ViewBag.menu;
+        <h3 class="title"><strong>@menu.Text</strong></h3>
+
+    <ul id="@menu.ID">
+        @{
+            <div class="control"><a id="prev_@menu.ID" class="prev" href="#">&lt;</a><a id="next_@menu.ID" class="next" href="#">&gt;</a></div>
+            var group = Model.GroupBy(r => @Model.IndexOf(r) / 4).ToList();
+            foreach (var parent in group)
+            {
+                <li class="section group">
+                    @foreach (Product item in parent)
+                    {
+                        <div class="col-md-3 col-sm-6">
+                            <div class="products">
+                                <div class="offer"></div>
+                                <div class="thumbnail"><a href="/Home/Detail/@item.ID"><img src="/Assets/Client/images/@item.Image"></a></div>
+                                <div class="productname">@item.Name</div>
+                                <h4 class="price">@item.Price VND</h4>
+                                <div class="button_group">
+                                    <a class="button add-cart" href="/Cart/AddItem?productID=@item.ID&quantity=1" method="post">Thêm vào giỏ</a>
+                                    <button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </li>
+            }
+        }
+    </ul>
+    }
+</div>
+<div class="clearfix">
+</div>
+
+
+@*<div class="featured-products">
+    <h3 class="title">Sản phẩm <strong>Nổi bật</strong></h3>
+    <div class="control"><a id="prev_featured" class="prev" href="#">&lt;</a><a id="next_featured" class="next" href="#">&gt;</a></div>
+    <ul id="featured">
+        <li>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="products">
+                        <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-05.png" alt="Product Name"></a></div>
+                        <div class="productname">Lincoln Corner Unit Products</div>
+                        <h4 class="price">$451.00</h4>
+                        <div class="button_group"><button class="button add-cart" type="button">Thêm vào giỏ</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="products">
+                        <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-06.png" alt="Product Name"></a></div>
+                        <div class="productname">Lincoln Corner Unit Products</div>
+                        <h4 class="price">$451.00</h4>
+                        <div class="button_group"><button class="button add-cart" type="button">Thêm vào giỏ</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="products">
+                        <div class="offer">New</div>
+                        <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-07.png" alt="Product Name"></a></div>
+                        <div class="productname">Lincoln Corner Unit Products</div>
+                        <h4 class="price">$451.00</h4>
+                        <div class="button_group"><button class="button add-cart" type="button">Thêm vào giỏ</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="products">
+                        <div class="thumbnail"><a href="details.html"><img src="images/products/small/products-04.png" alt="Product Name"></a></div>
+                        <div class="productname">Lincoln Corner Unit Products</div>
+                        <h4 class="price">$451.00</h4>
+                        <div class="button_group"><button class="button add-cart" type="button">Thêm vào giỏ</button><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>*@
