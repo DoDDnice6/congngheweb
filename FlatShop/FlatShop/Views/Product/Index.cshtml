@@ -1,0 +1,315 @@
+﻿@using FlatShop.Models.EF
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+   
+}
+@section script{
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            $("#sortby").val("@ViewBag.orderby")
+            $("#quantitydisplay").val("@ViewBag.numberpage")
+        })
+    </script>
+    <script type="text/javascript" >
+        function SortBy()
+        {
+            var order=$("#sortby").val()
+            window.location.href="/Product/Index?ParentID=@ViewBag.parentID&Category=@ViewBag.category&Brand=@ViewBag.brand&OrderBy="+order+"&PriceMin=@ViewBag.pricemin&PriceMax=@ViewBag.pricemax&NumberPage=@ViewBag.numberpage"
+        }
+    </script>
+    <script type="text/javascript">
+            function QuantityDisplay()
+            {
+                var quantity=$("#quantitydisplay").val()
+                window.location.href = "/Product/Index?ParentID=@ViewBag.parentID&Category=@ViewBag.category&Brand=@ViewBag.brand&OrderBy=@ViewBag.orderby&PriceMin=@ViewBag.pricemin&PriceMax=@ViewBag.pricemax&NumberPage=" + quantity
+            }
+    </script>
+        
+}
+
+<div class="container_fullwidth">
+    <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    @{ Html.RenderAction("Category", "Product", new { ParentID = ViewBag.parentID, Category = ViewBag.category });}
+                    @{ Html.RenderAction("BrandLeft", "Product", new { Brand = ViewBag.brand });}
+                    <div class="price-filter leftbar">
+                        <h3 class="title">
+                            Giá
+                        </h3>
+                            <form class="pricing" action="/Product/Index" method="get">
+                                <input type="hidden" value="@ViewBag.category" name="Category"/>
+                                <input type="hidden" value="@ViewBag.brand" name="Brand" />
+                                <input type="hidden" value="@ViewBag.orderby" name="OrderBy" id="OrderBy" />
+                                <label>
+                                    <input type="number" style="width:90px;" name="PriceMin" value="@ViewBag.pricemin">
+                                </label>
+                                <span class="separate">
+                                    -
+                                </span>
+                                <label>
+                                    <input type="number" style="width:90px;" name="PriceMax" value="@ViewBag.pricemax">
+                                </label>
+                                    <input style="float:left;width:100px;margin-top:10px;" type="submit" value="OK">
+                            </form>
+                    </div>
+                    <div class="product-tag leftbar">
+                        <h3 class="title">
+                            Products
+                            <strong>
+                                Tags
+                            </strong>
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Lincoln us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    SDress for Girl
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Corner
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Window
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    PG
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Oscar
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Bath room
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    PSD
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                   @{Html.RenderPartial("/Views/Shared/_Facebook.cshtml");}
+                    <div class="leftbanner">
+                        <img src="/Assets/Client/images/banner-small-01.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    @if (Model.Count > 0)
+                    {
+                        <div class="banner">
+                            <div class="bannerslide" id="bannerslide">
+                                <ul class="slides">
+                                    <li>
+                                        <a href="#">
+                                            <img src="/Assets/Client/images/banner-01.jpg" alt="" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="/Assets/Client/images/banner-02.jpg" alt="" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="products-grid">
+                            <div class="toolbar">
+                                <div class="sorter">
+                                    <div class="view-mode">
+                                        <a href="productlitst.html" class="list">
+                                            List
+                                        </a>
+                                        <a href="#" class="grid active">
+                                            Grid
+                                        </a>
+                                    </div>
+                                    <div class="sort-by">
+                                        Sắp xếp theo :
+
+                                        <select name="SortBy" id="sortby" onchange="SortBy()">
+                                            <option value="Default" selected>
+                                                Mặc định
+                                            </option>
+                                            <option value="Name">
+                                                Tên
+                                            </option>
+                                            <option value="Price">
+                                                Gía bán
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="limiter" >
+                                        Hiển thị :
+                                        <select name="" id="quantitydisplay" onchange="QuantityDisplay()">
+                                            <option value="3">
+                                                3
+                                            </option>
+                                            <option value="6">
+                                                6
+                                            </option>
+                                            <option value="9">
+                                                9
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="pager">
+                                    @*<a href="#" class="prev-page">
+                                            <i class="fa fa-angle-left">
+                                            </i>
+                                        </a>*@
+                                    @*<a href="#" class="active">
+                                            1
+                                        </a>
+                                        <a href="#">
+                                            2
+                                        </a>
+                                        <a href="#">
+                                            3
+                                        </a>*@
+                                    @Html.PagedListPager(Model, sotrang => Url.Action("Index", new { page = sotrang, ParentID = ViewBag.parentID, Category = ViewBag.category, Brand = ViewBag.brand }), 
+                                   new PagedListRenderOptions()
+                                    {
+                                        LiElementClasses = new List<string> { "MyPagedListDoDat" }
+                                    })
+                                    @*<a href="#" class="next-page">
+                                            <i class="fa fa-angle-right">
+                                            </i>
+                                        </a>*@
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                            @{
+                                var group = Model.GroupBy(r => Model.ToList().IndexOf(r) / 3).ToList();
+                                foreach (var parent in group)
+                                {
+                                    <div class="row">
+                                        @foreach (Product item in parent)
+                                        {
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="products">
+                                                    <div class="offer">- %40</div>
+                                                    <div class="thumbnail"><a href="/Home/Detail/@item.ID"><img src="/Assets/Client/images/@item.Image"></a></div>
+                                                    <div class="productname">@item.Name</div>
+                                                    <h4 class="price">@item.Price VND</h4>
+                                                    <div class="button_group">
+                                                        <a class="button add-cart" href="/Cart/AddItem?productID=@item.ID&quantity=1" method="post">Thêm vào giỏ</a>
+                                                        <button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+
+                                }
+                            }
+
+                            <div class="clearfix">
+                            </div>
+                            <div class="toolbar">
+                                <div class="sorter bottom">
+                                    <div class="view-mode">
+                                        <a href="productlitst.html" class="list">
+                                            List
+                                        </a>
+                                        <a href="#" class="grid active">
+                                            Grid
+                                        </a>
+                                    </div>
+                                    <div class="sort-by">
+                                        Sắp xếp theo :
+                                        <select name="">
+                                            <option value="Default" selected>
+                                                Mặc định
+                                            </option>
+                                            <option value="Name">
+                                                Tên
+                                            </option>
+                                            <option value="
+<strong>
+#
+</strong>
+">
+  Gía bán
+                        </option>
+                                        </select>
+                                    </div>
+                                    <div class="limiter">
+                                        Hiển thị :
+                                        <select name="">
+                                            <option value="3" selected>
+                                                3
+                                            </option>
+                                            <option value="6">
+                                                6
+                                            </option>
+                                            <option value="9">
+                                                9
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="pager">
+                                    <a href="#" class="prev-page">
+                                        <i class="fa fa-angle-left">
+                                        </i>
+                                    </a>
+                                    <a href="#" class="active">
+                                        1
+                                    </a>
+                                    <a href="#">
+                                        2
+                                    </a>
+                                    <a href="#">
+                                        3
+                                    </a>
+                                    <a href="#" class="next-page">
+                                        <i class="fa fa-angle-right">
+                                        </i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                            </div>
+                        </div>
+                                }
+                                else
+                                {
+                            <div style="text-align:center">
+                                <p>Không có sản phẩm nào!</p>
+                                <a class="btn btn-primary btn-lg" href="/Home/Index">Trở về trang chủ</a>
+                            </div>
+                    }
+
+                   
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>                       
+    </div>
+</div>

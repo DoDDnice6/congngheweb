@@ -49,6 +49,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -179,8 +187,11 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Common\Session.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductCategoryController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RegistryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -214,6 +225,7 @@
     <Compile Include="Models\EF\User.cs" />
     <Compile Include="Models\EF\UserInRole.cs" />
     <Compile Include="Models\Function\BrandF.cs" />
+    <Compile Include="Models\Function\ContactF.cs" />
     <Compile Include="Models\Function\CountryF.cs" />
     <Compile Include="Models\Function\MenuF.cs" />
     <Compile Include="Models\Function\UserF.cs" />
@@ -234,8 +246,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Admin\js\test.js" />
+    <Content Include="Assets\Client\css\MyPagedListDoDat.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -321,6 +335,15 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\HeaderUser.cshtml" />
     <Content Include="Views\Registry\Index.cshtml" />
+    <Content Include="Views\Shared\Brand.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\About.cshtml" />
+    <Content Include="Views\Shared\Category.cshtml" />
+    <Content Include="Views\Shared\MenuHeader.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\ProductCategory\Index.cshtml" />
+    <Content Include="Views\Shared\BrandLeft.cshtml" />
+    <Content Include="Views\Shared\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,7 +353,6 @@
     <Folder Include="Assets\Admin\images\" />
     <Folder Include="Assets\Admin\less\" />
     <Folder Include="Assets\Admin\vendor\" />
-    <Folder Include="Assets\Client\css\" />
     <Folder Include="Assets\Client\fonts\" />
     <Folder Include="Assets\Client\images\" />
     <Folder Include="Assets\Client\js\" />

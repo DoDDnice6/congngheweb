@@ -1,3 +1,11 @@
+
+#home_style{
+
+    background: url(../images/bg.jpg) center top no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-attachment: fixed;
+}
 .content_container{
 	margin-bottom: 15px;
 	padding-left: 10px;

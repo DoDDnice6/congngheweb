@@ -1,7 +1,7 @@
 ﻿@model List<FlatShop.Models.EF.MoreEF.CartItem>
 
 <li class="option-cart">
-    <a href="../Cart/Index" class="cart-icon">cart <span class="cart_no">@Model.Count</span></a>
+    <a href="/Cart/Index" class="cart-icon">cart <span class="cart_no">@Model.Count</span></a>
     <ul class="option-cart-item">
         @{
             decimal TotalPrice = 0;

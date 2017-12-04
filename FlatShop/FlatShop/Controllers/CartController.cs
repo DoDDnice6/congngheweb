@@ -109,7 +109,7 @@ namespace FlatShop.Controllers
                 status = true
             });
         }
-        [CustomAuthorizeAttribute(Roles = "Admin")]
+        [CustomAuthorizeAttribute(Roles = "Customer")]
         public ActionResult Payment()
         {
             var cart = Session[Common.Session.CartSession];
@@ -123,7 +123,7 @@ namespace FlatShop.Controllers
 
 
         [HttpPost]
-        [CustomAuthorizeAttribute(Roles ="Admin")]
+        [CustomAuthorizeAttribute(Roles ="Customer")]
         public ActionResult Payment(string customername, string customerphone, string customeraddress, decimal totalprice)
         {
             var order = new Order();

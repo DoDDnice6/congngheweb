@@ -56,5 +56,11 @@ namespace FlatShop.Controllers
             }
 
         }
+
+        public ActionResult Logout()
+        {
+            Session[Common.Session.LoginSession] = null;
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

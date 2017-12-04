@@ -1,0 +1,31 @@
+﻿@using FlatShop.Models.EF
+@model List<Brand>
+
+
+<div class="branch leftbar">
+    <h3 class="title">
+        Thương hiệu
+    </h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            if (ViewBag.brand == item.ID)
+            {
+                <li>
+                    <a class="active" href="/Product/Index?Category=@ViewBag.CategoryID&Brand=@item.ID">
+                        @item.Name
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="/Product/Index?Category=@ViewBag.CategoryID&Brand=@item.ID">
+                        @item.Name
+                    </a>
+                </li>
+            }
+        }
+    </ul>
+</div>
+

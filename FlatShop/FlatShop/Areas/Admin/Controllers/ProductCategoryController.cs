@@ -18,7 +18,7 @@ namespace FlatShop.Areas.Admin.Controllers
         }
 
 
-        public ActionResult Detail(long ID)
+        public ActionResult Detail(int ID)
         {
             var model = f.FindEntity(ID);
             if (model != null)
@@ -50,7 +50,7 @@ namespace FlatShop.Areas.Admin.Controllers
 
         }
 
-        public ActionResult Update(long ID)
+        public ActionResult Update(int ID)
         {
             var model = f.FindEntity(ID);
             return View(model);

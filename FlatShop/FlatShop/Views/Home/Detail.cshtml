@@ -27,6 +27,13 @@
     <script type="text/javascript" src="~/Assets/Client/js/jquery.carouFredSel-6.2.1-packed.js"></script>
     <script defer src="~/Assets/Client/js/jquery.flexslider.js"></script>
     <script type="text/javascript" src="~/Assets/Client/js/script.min.js"></script>
+    <script>
+        function AddToCast() {
+            var xx = '/Cart/AddItem?productID=@Model.ID&quantity=' + jQuery("#quantity").val()
+            jQuery("#addtocast").attr('href',xx);
+
+        }
+    </script>
 }
 
 
@@ -38,7 +45,7 @@
                 <div class="products-details">
                     <div class="preview_image">
                         <div class="preview-small">
-                            <img id="zoom_03" src="/Assets/Client/images/products/medium/products-01.jpg" data-zoom-image="/Assets/Client/images/products/Large/products-01.jpg" alt="">
+                            <img id="zoom_03" src="/Assets/Client/images/@Model.Image" data-zoom-image="/Assets/Client/images/products/Large/products-01.jpg" alt="" style="display:block;margin:auto;">
                         </div>
                         <div class="thum-image">
                             <ul id="gallery_01" class="prev-thum">
@@ -80,7 +87,7 @@
                     </div>
                     <div class="products-description">
                         <h5 class="name">
-                            Lincoln Corner Unit Products
+                            @Model.Name
                         </h5>
                         <p>
                             <img alt="" src="/Assets/Client/images/star.png">
@@ -90,26 +97,36 @@
                         </p>
                         <p>
                             Availability:
-                            <span class=" light-red">
-                                In Stock
-                            </span>
+                            @if (Model.Quantity > 0)
+                            {
+                                <span class=" light-red">
+                                    Còn Hàng
+                                </span>
+                            }
+                            else
+                            {
+                                <span class=" light-red">
+                                    Hết Hàng
+                                </span>
+                            }
                         </p>
                         <p>
-                            Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+                            @Model.Description
                         </p>
                         <hr class="border">
                         <div class="price">
-                            Gía :
+                            Giá :
                             <span class="new_price">
-                                450.00
+                                @Model.Price
+                                
                                 <sup>
-                                    $
+                                    VNĐ
                                 </sup>
                             </span>
                             <span class="old_price">
-                                450.00
+                                @*@Model.PromotionPrice*@
                                 <sup>
-                                    $
+                                    VNĐ
                                 </sup>
                             </span>
                         </div>
@@ -117,16 +134,21 @@
                         <div class="wided">
                             <div class="qty">
                                 Số lượng:
-                                <select>
-                                    <option>
-                                        1
-                                    </option>
+                                <select style="margin-left:10px;height:40px;" id="quantity">
+                                    @{
+                                        for (int i = 1; i < 31; i++)
+                                        {
+                                            <option value="@i">
+                                                @i
+                                            </option>
+                                        }
+                                    }
                                 </select>
                             </div>
                             <div class="button_group">
-                                <button class="button">
+                                <a class="button" method="post" onclick="return AddToCast()" id="addtocast">
                                     THÊM VÀO GIỎ
-                                </button>
+                                </a>
                                 <button class="button compare">
                                     <i class="fa fa-exchange">
                                     </i>
@@ -155,20 +177,12 @@
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
-                                    <td>ID</td>
-                                    <td>@Model.ID</td>
-                                </tr>
-                                <tr>
                                     <td>Tên</td>
                                     <td>@Model.Name</td>
                                 </tr>
                                 <tr>
                                     <td>Code</td>
                                     <td>@Model.Code</td>
-                                </tr>
-                                <tr>
-                                    <td>Hình ảnh</td>
-                                    <td><img src="/Assets/Admin/images/@Model.Image" /></td>
                                 </tr>
                             </tbody>
                         </table>

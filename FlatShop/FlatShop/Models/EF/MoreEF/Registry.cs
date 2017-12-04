@@ -33,7 +33,8 @@ namespace FlatShop.Models.EF.MoreEF
 
 
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "Yêu cầu nhập email")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Email không đúng")]
+       // [Required(ErrorMessage = "Yêu cầu nhập email")]
         public string Email { get; set; }
     }
 }

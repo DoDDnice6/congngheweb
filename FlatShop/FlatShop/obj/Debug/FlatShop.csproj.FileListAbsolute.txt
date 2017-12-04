@@ -67,3 +67,80 @@ D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\bin\Microsoft.Owin.S
 D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\obj\Debug\FlatShop.dll
 D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\obj\Debug\FlatShop.pdb
 D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\obj\Debug\FlatShop.csprojResolveAssemblyReference.cache
+D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\bin\PagedList.dll
+D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\bin\PagedList.Mvc.dll
+D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\bin\PagedList.xml
+D:\học tập\ki 6\Cong Nghe Web\web_app\FlatShop\FlatShop\bin\PagedList.Mvc.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\csc.exe
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\System.Collections.Immutable.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\System.Reflection.Metadata.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\vbc.exe
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\VBCSCompiler.exe
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\roslyn\VBCSCompiler.exe.config
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\FlatShop.dll.config
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\FlatShop.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\FlatShop.pdb
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Antlr3.Runtime.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\EntityFramework.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\EntityFramework.SqlServer.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Cookies.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Facebook.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Google.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.OAuth.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Twitter.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Web.Infrastructure.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Newtonsoft.Json.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Owin.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\PagedList.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\PagedList.Mvc.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Helpers.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Mvc.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Optimization.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Razor.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.Deployment.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.Razor.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\WebGrease.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\PagedList.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\PagedList.Mvc.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Helpers.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Mvc.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Optimization.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.Razor.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.Deployment.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\System.Web.WebPages.Razor.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Antlr3.Runtime.pdb
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Newtonsoft.Json.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\EntityFramework.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\EntityFramework.SqlServer.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Facebook.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Cookies.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.OAuth.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Google.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.Twitter.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\obj\Debug\FlatShop.csprojResolveAssemblyReference.cache
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\obj\Debug\FlatShop.dll
+E:\GitHub_project\New folder\congngheweb\FlatShop\FlatShop\obj\Debug\FlatShop.pdb

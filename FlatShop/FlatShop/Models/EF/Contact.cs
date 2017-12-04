@@ -12,8 +12,14 @@ namespace FlatShop.Models.EF
         public int ID { get; set; }
 
         [Column(TypeName = "ntext")]
-        public string Content { get; set; }
 
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        [StringLength(50)]
+        public string Email { get; set; }
+        public string Content { get; set; }
+        public DateTime? CreateDate { get; set; }
         public bool? Status { get; set; }
     }
 }

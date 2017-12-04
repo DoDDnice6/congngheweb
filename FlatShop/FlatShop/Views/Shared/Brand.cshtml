@@ -1,0 +1,27 @@
+﻿@using FlatShop.Models.EF
+@model List<FlatShop.Models.EF.Brand>
+<div class="our-brand">
+    <h3 class="title"><strong>Nhãn Hiệu </strong></h3>
+    <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
+
+    <ul id="braldLogo">
+        @{
+            var group = Model.GroupBy(r => Model.IndexOf(r) / 5).ToList();
+            foreach (var parent in group)
+            {
+                <li>
+                    <ul class="brand_item">
+                        @foreach (Brand item in parent)
+                        {
+                            <li>
+                                <a href="#">
+                                    <div class="brand-logo"><img src="/Assets/Client/images/@item.Image" alt=""></div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+        }
+    </ul>   
+</div>
